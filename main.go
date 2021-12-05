@@ -1,4 +1,4 @@
-package dicohook
+package webgook
 
 import (
 	"bytes"

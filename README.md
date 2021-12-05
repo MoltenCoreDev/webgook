@@ -1,4 +1,4 @@
-# Discohook
+# webgook
 A simple discord go library to send webhooks.
 
 # Example
