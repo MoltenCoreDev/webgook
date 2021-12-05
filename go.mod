@@ -1,3 +1,3 @@
-module github.com/MoltenCoreDev/discohook
+module github.com/MoltenCoreDev/webgook
 
 go 1.17
