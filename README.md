@@ -6,7 +6,7 @@ A simple discord go library to send webhooks.
 func main() {
 package main
 
-import "github.com/MoltenCoreDev/discohook"
+import "github.com/MoltenCoreDev/webgook"
 
 	wh := Webhook{
 		Url:      "https://discord.com/api/webhooks/id/token", // You can copy this from the channel settings, where you create the webhook
