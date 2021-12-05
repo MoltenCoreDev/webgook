@@ -1,4 +1,4 @@
-package main
+package discohook
 
 import (
 	"bytes"
@@ -47,19 +47,4 @@ func (w *Webhook) Send() error {
 	defer resp.Body.Close()
 
 	return err
-}
-
-func main() {
-	wh := Webhook{
-		Url:           "https://discord.com/api/webhooks/917033935815475250/0twx5_h1S5E2hsiKwVpZ8iVmb--BKoOk8zSXX1YXfSwjbwtmYowHzfS2gH5q0gn8S7FJ",
-		Content:       "Hello World",
-		Username:      "test",
-		AllowEveryone: false,
-		ThreadId:      "917034583688642570",
-	}
-	err := wh.Send()
-	if err != nil {
-		panic(err)
-	}
-
 }
