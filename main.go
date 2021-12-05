@@ -6,11 +6,15 @@ import (
 	"net/http"
 )
 
+// A webhook is a struct that contains the information needed to execute a webhook.
 type Webhook struct {
-	Url           string `json:"-"`
-	Content       string `json:"content,omitempty"`
-	ThreadId      string `json:"-"`
-	Username      string `json:"username,omitempty"`
+	// You can get this from the channel integration setting menu.
+	Url      string `json:"-"`
+	Content  string `json:"content,omitempty"`
+	ThreadId string `json:"-"`
+	// Changes the shown username of webhook's message.
+	Username string `json:"username,omitempty"`
+	// Changes the shown avatar of webhook's message.
 	AvatarURL     string `json:"avatar_url,omitempty"`
 	Tts           bool   `json:"tts,omitempty"`
 	AllowEveryone bool   `json:"-"`
@@ -19,7 +23,7 @@ type Webhook struct {
 	AllowedMentions map[string][]string `json:"allowed_mentions,omitempty"`
 }
 
-// Sends the webhook
+// Send() will execute the webhook, effectively sending a message to the channel it was created in.
 func (w *Webhook) Send() error {
 	if w.ThreadId != "" {
 		w.Url = w.Url + "?thread_id=" + w.ThreadId
